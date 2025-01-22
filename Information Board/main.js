@@ -54,6 +54,7 @@ function inputMessage() {
     }
     if (row > 3){
       error = true
+      alert("last set of words are too long! Each line can only contain 20 characters!")
       return;
     }
     let end = col + word.length
@@ -65,6 +66,7 @@ function inputMessage() {
       board[row][col++] = " "
     
   });
+
   if(!error)
     displayBoard(board); 
 }
