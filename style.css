@@ -1,3 +1,17 @@
+body{
+    background: rgb(95, 95, 95);
+    color: rgb(206, 206, 206);
+}
+
 h1{
-    font-family:cursive;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a{
+    color: rgb(114, 230, 204);
+}
+
+a:hover{
+    color: rgb(79, 158, 141);
+    cursor:pointer;
 }
