@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <div id="wrapper"><input type="range" id="slider" min="1" max="9" value=2 onchange="update(this.value);">
+        <div>
+          <span id="work">WORK</span><span id="life">LIFE</span>
+        </div>
+        <div id="balance">BALANCE</div>
+      </div>
+  <!-- Task solution from here -->
+    <div id="colors">
+        <input type="range" id="red" min="0" max="255" onchange="updateColor()">
+        <input type="range" id="green" min="0" max="255" onchange="updateColor()">
+        <input type="range" id="blue" min="0" max="255" onchange="updateColor()">
+
+    </div>
+
+</body>
+</html>

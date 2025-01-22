@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("https://ggayane.github.io/css-experiments/Inconsolata-VF.ttf");
+    font-weight: 100 900;
+    font-stretch: 50% 200%;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: #FFFFFF;
+      font-size: 8em;
+      font-family: 'Inconsolata'; 
+  }
+  
+  #wrapper {
+      width: 90vw;
+      margin: 0px auto;
+      color: rgb(255,255,255);
+  }
+  
+  #work {
+      font-weight:900;
+  }
+  
+  #life {
+      font-weight:100;
+  }
+  
+  #balance {
+     font-size: 0.3em;
+     line-height: 0.3em;
+     font-weight: 400;
+  }
