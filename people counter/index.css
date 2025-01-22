@@ -9,6 +9,9 @@ body {
     font-weight: bold;
     text-align: center;
 }
+.counter{
+    margin:25% 20%;
+}
 
 body::after {
     content: "";
