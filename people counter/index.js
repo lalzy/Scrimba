@@ -13,7 +13,7 @@ function resetCount(){
 
 function save(){
     let doc = document.getElementById("save-el");
-    if(!doc.textContent.includes(count) && count = 0){
+    if(count != 0){
         if(saved){
             doc.textContent += ` - ${count}`
         }else{
