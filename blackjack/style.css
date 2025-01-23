@@ -1,0 +1,18 @@
+#failedmessage {
+    color:red;
+    display:none;
+}
+
+.wonmessage{
+    color: blue;
+    display:none;
+}
+
+#dealerwonmessage{
+    color:red;
+}
+
+*{
+    background-color: green;
+    color: cyan;
+}
