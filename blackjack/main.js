@@ -2,6 +2,7 @@ let playerSum = 0
 let dealerSum = 0
 var hit21 = false;
 var bust = false;
+
 function display(){
     document.getElementById("playerSum").innerText = playerSum;
     document.getElementById("dealerSum").innerText = dealerSum;
