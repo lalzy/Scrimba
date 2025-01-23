@@ -1,15 +1,12 @@
-#failedmessage {
-    color:red;
-    display:none;
-}
-
-.wonmessage{
-    color: blue;
-    display:none;
-}
 
 #dealerwonmessage{
     color:red;
+    display: none;
+}
+
+#wonmessage{
+    color:cyan;
+    display:none;
 }
 
 *{
