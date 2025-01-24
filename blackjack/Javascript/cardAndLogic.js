@@ -34,7 +34,6 @@ function sumUpAces(aces, sum){
 function sumUpScore(hand){
     let sum = 0
     let aces = 0
-    console.log("hi")
     hand.forEach(card => {
         if(card[VALUE] == 1){
             aces++
@@ -42,11 +41,9 @@ function sumUpScore(hand){
             sum += card[VALUE]
         }
     })
-    console.log("sum org = " + sum)
     if(aces > 0){
         sum = sumUpAces(aces, sum)
     }
-    console.log("sum = " + sum)
     return sum
 }
 
@@ -57,8 +54,6 @@ function draw(hand){
     if(currentCard[VALUE] > 10){
         currentCard[VALUE] = 10
     }
-
-    console.log(`${currentCard[VALUE]} card value`)
     hand.push(currentCard)
 }
 
