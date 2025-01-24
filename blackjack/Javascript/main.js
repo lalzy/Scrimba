@@ -123,6 +123,7 @@ function winCheck (){
 }
 function stand(){
     revealDealer = true
+    dealerSum = sumUpScore(dealerHand)
     if(hit21){
         won()
     }else if(bust){
