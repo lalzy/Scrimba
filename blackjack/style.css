@@ -13,3 +13,24 @@
     background-color: green;
     color: cyan;
 }
+
+#standButton {
+    display:none;
+}
+
+#hitButton{
+    display:none;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card{
+    width: 48px;   /* Width of each card */
+    height: 64px;  /* Height of each card */
+    background-image: url('assets/images/cardDeck.png');
+    background-size: 944px 385px; /* The size of the entire sprite sheet (13 columns x 71px, 4 rows x 96px) */
+    margin: 5px;  /* Just for spacing between cards */
+}
