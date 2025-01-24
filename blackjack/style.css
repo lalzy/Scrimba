@@ -8,7 +8,7 @@
     background-color: green;
     color: cyan;
 }
-
+/*
 body{
     display: grid;
     justify-content: center; /* Horizontally center content */
@@ -24,7 +24,7 @@ body{
     margin-top: 20px; /* Add a margin to separate buttons from other content */
     margin-left: 10px;
 }
-
+*/
 body {
     display: grid;
     justify-content: center; /* Horizontally center content */
