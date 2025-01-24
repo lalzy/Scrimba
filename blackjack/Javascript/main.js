@@ -27,6 +27,8 @@ const SPADES = 3
 function reset(){
     playerHand = []
     dealerHand = []
+    hit21 = false;
+    bust = false;
     revealDealer = false
     cardDeck = []
     playerSum = 0
@@ -49,8 +51,9 @@ function start(){
     if(playerSum >= 21){
         playerSum = "Blackjack!"
         won()
+    }else{
+      switchButtons(true)
     }
-    switchButtons(true)
     display()
 }
 
@@ -88,8 +91,10 @@ function winCheck (){
         won()
     }else if(dealerSum == 21){
         lose()
-    }else if(dealerSum > playerSum){
+    }else if(dealerSum >= playerSum){
         lose()
+    }else{
+        won()
     }
 }
 function stand(){
@@ -104,9 +109,9 @@ function stand(){
         sumUpScore[dealerHand]
         // rewrite draw to be reveal.
         while(dealerSum < 21 && dealerSum < playerSum){
+console.log("in loop")
             dealerSum = getCard(dealerHand)
         }
-        display()
         winCheck()
     }
     display()
