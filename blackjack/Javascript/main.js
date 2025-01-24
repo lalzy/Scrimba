@@ -54,35 +54,6 @@ function start(){
     display()
 }
 
-function changeState(element, on){
-    document.getElementById(element).style.display = on ? "inline" : "none"
-}
-
-function switchButtons(isRunning){
-    if (isRunning){
-        changeState("hitButton", true)
-        changeState("standButton", true)
-        changeState("startButton", false)
-    }else{
-        changeState("hitButton", false)
-        changeState("standButton", false)
-        changeState("startButton", true)
-    }
-}
-
-function message(won){
-    let message = document.getElementById("wonmessage");
-    message.style.display = "block"
-    if(won == "reset"){
-        message.style.display = "none"
-    }else if (won){
-        message.innerText = "Player Wins!"
-        message.style.color = "cyan"
-    }else{
-        message.innerHTML = "Dealer wins!"
-        message.style.color = "red"
-    }
-}
 
 function lose(){
     switchButtons(false)

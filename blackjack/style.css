@@ -1,6 +1,7 @@
 
 #wonmessage{
-    display:none;
+    /* display:none; */
+    visibility: hidden;
 }
 
 *{
@@ -8,12 +9,62 @@
     color: cyan;
 }
 
+body{
+    display: grid;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    width: 800px; /* Set a fixed width for the grid */
+    height: 400px; /* Set a fixed height for the grid */
+    margin: 0; /* Remove default margin */
+}
+
+.button{
+    display: flex; /* Flexbox to arrange buttons next to each other */
+    gap: 10px; /* Optional: Adds space between buttons */
+    margin-top: 20px; /* Add a margin to separate buttons from other content */
+    margin-left: 10px;
+}
+
+body {
+    display: grid;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    width: 800px; /* Set a fixed width for the grid */
+    height: 400px; /* Set a fixed height for the grid */
+    margin: 0; /* Remove default margin */
+}
+
+.button {
+    display: flex; /* Flexbox to arrange buttons next to each other */
+    gap: 10px; /* Optional: Adds space between buttons */
+    margin-top: 20px; /* Add a margin to separate buttons from other content */
+    margin-left: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #14a600; /* Color of the line */
+    width: 100vw; /* Make it span the full viewport width */
+    position: absolute; /* Position it absolutely in the container */
+    left: 0; /* Align it to the left edge */
+    margin: 0; /* Remove any default margin */
+}
+
+#startButton{
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    visibility:visible;
+}
+
 #standButton {
-    display:none;
+    /* display:none; */
+    visibility:hidden;
 }
 
 #hitButton{
-    display:none;
+    visibility:hidden;
 }
 .cards{
     display: flex;

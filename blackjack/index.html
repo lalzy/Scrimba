@@ -11,13 +11,16 @@
     <p class="dealerText">Dealer Score: <span id="dealerSum">0</span></p>
     <P>Player Score: <span id="playerSum">0</span></P>
     <div class="cards dealerCards"></div>
+    <hr>
     <div class="cards playerCards"></div>
     <p id="wonmessage" class="wonmessage">You won!</p>
-    <button id="hitButton" onclick="hit()">hit</button>
-    <button id="standButton" onclick="stand()">stand</button>
-    <button id="startButton" onclick="start()">start</button>
-    <script id="startButton" src="Javascript/cardAndLogic.js"></script>
-    <script id="startButton" src="Javascript/draw.js"></script>
-    <script id="startButton" src="Javascript/main.js"></script>
+    <div class="button">
+        <button id="hitButton" onclick="hit()">hit</button>
+        <button id="startButton" onclick="start()">start</button>
+        <button id="standButton" onclick="stand()">stand</button>
+    </div>
+    <script src="Javascript/cardAndLogic.js"></script>
+    <script src="Javascript/draw.js"></script>
+    <script src="Javascript/main.js"></script>
 </body>
 </html>
