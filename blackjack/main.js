@@ -101,17 +101,23 @@ function sumUpScore(hand){
 /**Rewrite to draw cards and sum up instead. */
 function draw(hand){
     let currentCard = cardDeck.pop()
-    let currentSum = sumUpScore(hand)
 
     if(currentCard[VALUE] > 10){
         currentCard[VALUE] == 10
     }
 
+    let currentSum = sumUpScore(hand)
+
     hand.push(currentCard)
+}
+
+function drawCards(){
+
 }
 
 function getCard(hand){
     draw(hand)
+    drawCards()
     return sumUpScore(hand)
 }
 
