@@ -8,9 +8,7 @@ var bust = false;
 const playerDrawArea = document.querySelector(".playerCards")
 const dealerDrawArea = document.querySelector(".dealerCards")
 
-/*
-
-Make cards visible:
+/* Make cards visible:
     Dlear only shows 1 card, other card is hidden until stand
         
     
