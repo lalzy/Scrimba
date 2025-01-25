@@ -10,11 +10,13 @@ function shuffle(array){
 
 function definecards(){
     let cardArray = []
-    for(let suit = 1 ; suit <= 4 ; suit++){
-        for(let card = 1 ; card <= 13 ; card++){
-            cardArray.push([suit, card, (card - 1) * 48, (suit - 1) * 64])
-        }
-    }
+	for (let i = 0; i < deckAmount ; i++){
+		for(let suit = 1 ; suit <= 4 ; suit++){
+			for(let card = 1 ; card <= 13 ; card++){
+				cardArray.push([suit, card, (card - 1) * 48, (suit - 1) * 64])
+			}
+		}
+	}
     return cardArray;
 }
 
