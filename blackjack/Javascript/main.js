@@ -1,17 +1,17 @@
-let playerSum = 0
-let dealerSum = 0
+var playerSum = 0
+var dealerSum = 0
 var playerHand =[]
 var dealerHand = []
-var cardDeck = [];
 var hit21 = false;
 var bust = false;
-let revealDealer = false
+var revealDealer = false
 const BACKCARD = [0,0, 0, 256]
 const playerDrawArea = document.querySelector(".playerCards")
 const dealerDrawArea = document.querySelector(".dealerCards")
-
-/* Make cards visible:
-    Dlear only shows 1 card, other card is hidden until stand */
+var turns = 0
+var maxturns = 5
+var deckAmount = 1
+var cardDeck = definecards()
 
 var SUIT = 0
 var VALUE = 1
@@ -30,14 +30,17 @@ function reset(){
     hit21 = false;
     bust = false;
     revealDealer = false
-    cardDeck = []
     playerSum = 0
     dealerSum = 0
+	if (turns >= maxturns){
+		cardDeck = definecards()
+		turns = 0
+	}
 }
 
 function init(){
     reset()
-    cardDeck = shuffle(definecards())
+    cardDeck = shuffle(cardDeck)
     message("reset")
 }
 
@@ -59,12 +62,14 @@ function start(){
 
 
 function lose(){
+	turns++
     switchButtons(false)
     message(false)
 
 }
 
 function won(){
+	turns++
     switchButtons(false)
     message(true)
 }
