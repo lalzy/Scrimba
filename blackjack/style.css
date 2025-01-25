@@ -41,6 +41,10 @@ body {
     margin-left: 10px;
 }
 
+#startButton, #standButton, #hitButton:hover{
+	cursor:pointer;
+}
+
 hr {
     border: 0;
     height: 1px;
@@ -78,4 +82,15 @@ hr {
     background-image: url('assets/images/cardDeck.png');
     background-size: 944px 385px; /* The size of the entire sprite sheet (13 columns x 71px, 4 rows x 96px) */
     margin: 5px;  /* Just for spacing between cards */
+}
+
+.credits{
+	color: blue;
+}
+
+.credits>a{
+	color: darkblue;
+}
+.credits>a:hover{
+	color: cyan;
 }
