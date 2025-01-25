@@ -1,17 +1,96 @@
+
+#wonmessage{
+    /* display:none; */
+    visibility: hidden;
+}
+
+*{
+    background-color: green;
+    color: cyan;
+}
+/*
 body{
-    background: rgb(95, 95, 95);
-    color: rgb(206, 206, 206);
+    display: grid;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    width: 800px; /* Set a fixed width for the grid */
+    height: 400px; /* Set a fixed height for the grid */
+    margin: 0; /* Remove default margin */
 }
 
-h1{
-    font-family: 'Courier New', Courier, monospace;
+.button{
+    display: flex; /* Flexbox to arrange buttons next to each other */
+    gap: 10px; /* Optional: Adds space between buttons */
+    margin-top: 20px; /* Add a margin to separate buttons from other content */
+    margin-left: 10px;
+}
+*/
+body {
+    display: grid;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    width: 800px; /* Set a fixed width for the grid */
+    height: 400px; /* Set a fixed height for the grid */
+    margin: 0; /* Remove default margin */
 }
 
-a{
-    color: rgb(114, 230, 204);
+.button {
+    display: flex; /* Flexbox to arrange buttons next to each other */
+    gap: 10px; /* Optional: Adds space between buttons */
+    margin-top: 20px; /* Add a margin to separate buttons from other content */
+    margin-left: 10px;
 }
 
-a:hover{
-    color: rgb(79, 158, 141);
-    cursor:pointer;
+#startButton, #standButton, #hitButton:hover{
+	cursor:pointer;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #14a600; /* Color of the line */
+    width: 100vw; /* Make it span the full viewport width */
+    position: absolute; /* Position it absolutely in the container */
+    left: 0; /* Align it to the left edge */
+    margin: 0; /* Remove any default margin */
+}
+
+#startButton{
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    visibility:visible;
+}
+
+#standButton {
+    /* display:none; */
+    visibility:hidden;
+}
+
+#hitButton{
+    visibility:hidden;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card{
+    width: 48px;   /* Width of each card */
+    height: 64px;  /* Height of each card */
+    background-image: url('assets/images/cardDeck.png');
+    background-size: 944px 385px; /* The size of the entire sprite sheet (13 columns x 71px, 4 rows x 96px) */
+    margin: 5px;  /* Just for spacing between cards */
+}
+
+.credits{
+	color: blue;
+}
+
+.credits>a{
+	color: darkblue;
+}
+.credits>a:hover{
+	color: cyan;
 }
