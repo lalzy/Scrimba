@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript prosjecter - Svein</title>
+    <title>Document</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Scrimba JS prosjekter:</h1>
-    <ul>
-        <li><a href="./people counter/index.html">people counter</a></li>
-        <li><a href="./Worklife Balance/index.html">Worklife balance</a></li>
-        <li><a href="./Information Board/index.html">Information Board</a></li>
-        <li><a href="./blackjack/index.html">BlackJack</a></li>
-    </ul>
+	<p class="credits">card assets by: <a href="https://ivoryred.itch.io/pixel-poker-cards">IvoryRed</a></p>
+    <p class="dealerText">Dealer Score: <span id="dealerSum">0</span></p>
+    <P>Player Score: <span id="playerSum">0</span></P>
+    <div class="cards dealerCards"></div>
+    <hr>
+    <div class="cards playerCards"></div>
+    <p id="wonmessage" class="wonmessage">You won!</p>
+    <div class="button">
+        <button id="hitButton" onclick="hit()">hit</button>
+        <button id="startButton" onclick="start()">start</button>
+        <button id="standButton" onclick="stand()">stand</button>
+    </div>
+    <script src="Javascript/cardAndLogic.js"></script>
+    <script src="Javascript/draw.js"></script>
+    <script src="Javascript/main.js"></script>
 </body>
 </html>
