@@ -120,7 +120,6 @@ function stand(){
     }else if(bust){
         lose()
     }else {
-        console.clear()
         sumUpScore[dealerHand]
         // rewrite draw to be reveal.
         let sumToStop = onlyTo17 ? 17 : 21;
