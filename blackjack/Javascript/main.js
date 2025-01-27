@@ -4,6 +4,7 @@ var playerHand =[]
 var dealerHand = []
 var hit21 = false;
 var bust = false;
+var onlyTo17 = true
 var revealDealer = false
 const BACKCARD = [0,0, 0, 256]
 const playerDrawArea = document.querySelector(".playerCards")
@@ -41,42 +42,48 @@ function reset(){
 function init(){
     reset()
     cardDeck = shuffle(cardDeck)
-    message("reset")
+    message(RESET)
 }
 
 function start(){
     init()
-    playerSum = getCard(playerHand)
-    draw(dealerHand) // We don't want to sum up yet
-    playerSum = getCard(playerHand)
-    draw(dealerHand) // We don't want to sum up yet
+    drawFromDeck(playerHand)
+    drawFromDeck(dealerHand) // We don't want to sum up yet
+    drawFromDeck(playerHand)
+    drawFromDeck(dealerHand) // We don't want to sum up yet
     dealerSum = dealerHand[1][VALUE]
-    if(playerSum >= 21){
-        playerSum = "Blackjack!"
-        won()
-    }else{
-      switchButtons(true)
-    }
+    playerSum = sumUpScore(playerHand)
+ 
+    switchButtons(true)
+    
     display()
 }
 
-
+const LOSE = 0
+const WON = 1
+const TIE = 2
+const RESET = 3
 function lose(){
 	turns++
     switchButtons(false)
-    message(false)
+    message(LOSE)
 
 }
-
+function tie (){
+    turns++
+    switchButtons(false)
+    message(TIE)
+}
 function won(){
 	turns++
     switchButtons(false)
-    message(true)
+    message(WON)
 }
 
 
 function hit(){
-    playerSum = getCard(playerHand);
+    drawFromDeck(playerHand);
+    playerSum = sumUpScore(playerHand)
     if(playerSum > 21){
         bust = true
        /* deactivate hit */ 
@@ -96,7 +103,9 @@ function winCheck (){
         won()
     }else if(dealerSum == 21){
         lose()
-    }else if(dealerSum >= playerSum){
+    }else if(dealerSum == playerSum){
+        tie()
+    }else if(dealerSum > playerSum){
         lose()
     }else{
         won()
@@ -113,9 +122,11 @@ function stand(){
         console.clear()
         sumUpScore[dealerHand]
         // rewrite draw to be reveal.
-        while(dealerSum < 21 && dealerSum < playerSum){
+        let sumToStop = onlyTo17 ? 17 : 21;
+        while(dealerSum <= sumToStop && dealerSum < playerSum){
 console.log("in loop")
-            dealerSum = getCard(dealerHand)
+            drawFromDeck(dealerHand)
+            dealerSum = sumUpScore(dealerHand)
         }
         winCheck()
     }

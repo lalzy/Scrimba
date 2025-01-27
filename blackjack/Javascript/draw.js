@@ -49,14 +49,31 @@ function switchButtons(isRunning){
 }
 
 
-function message(won){
+function message(status){
     let message = document.getElementById("wonmessage");
     message.style.visibility = "visible"
+    switch(status){
+        case LOSE:
+            message.innerText = "Player Lose!"
+            message.style.color = "red"
+            break;
+        case WON:
+            message.innerText = "Player Wins!"
+            message.style.color = "cyan"
+            break;
+        case TIE:
+            message.innerText = "Push!"
+            message.style.color = "orange"
+            break;
+        case RESET:
+            message.style.visibility = "hidden"
+            break;
+        default:
+    }
+
     if(won == "reset"){
         message.style.visibility = "hidden"
     }else if (won){
-        message.innerText = "Player Wins!"
-        message.style.color = "cyan"
     }else{
         message.innerHTML = "Dealer wins!"
         message.style.color = "red"

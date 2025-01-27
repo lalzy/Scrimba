@@ -8,6 +8,7 @@ function shuffle(array){
     return array
 }
 
+// Create an array of cards, with their sub-pixle starts for the CSS backround.
 function definecards(){
     let cardArray = []
 	for (let i = 0; i < deckAmount ; i++){
@@ -19,7 +20,8 @@ function definecards(){
 	}
     return cardArray;
 }
-
+// Sums up all the aces.
+// If the sum is > 21, an aces is "downgraded" to 1.
 function sumUpAces(aces, sum){
     // full value cause bust
     let howMany = 0
@@ -29,10 +31,10 @@ function sumUpAces(aces, sum){
         }
     }
 
-    aces -= howMany
-    return (sum + (11 * howMany) + aces)
+    return (sum + (11 * (aces - howMany)) + aces)
 }
 
+// Sums up the score for all cards in the hand
 function sumUpScore(hand){
     let sum = 0
     let aces = 0
@@ -51,16 +53,10 @@ function sumUpScore(hand){
 
 
 /**Rewrite to draw cards and sum up instead. */
-function draw(hand){
+function drawFromDeck(hand){
     let currentCard = cardDeck.pop()
     if(currentCard[VALUE] > 10){
         currentCard[VALUE] = 10
     }
     hand.push(currentCard)
-}
-
-
-function getCard(hand){
-    draw(hand)
-    return sumUpScore(hand)
 }
