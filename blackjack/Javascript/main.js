@@ -124,7 +124,7 @@ function stand(){
         sumUpScore[dealerHand]
         // rewrite draw to be reveal.
         let sumToStop = onlyTo17 ? 17 : 21;
-        while(dealerSum <= sumToStop && dealerSum < playerSum){
+        while(dealerSum <= sumToStop && dealerSum <= playerSum){
 console.log("in loop")
             drawFromDeck(dealerHand)
             dealerSum = sumUpScore(dealerHand)
