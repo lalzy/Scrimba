@@ -30,8 +30,8 @@ function sumUpAces(aces, sum){
             howMany++
         }
     }
-
-    return (sum + (11 * (aces - howMany)) + aces)
+    aces -= howMany;
+    return (sum + (11 * howMany) + aces)
 }
 
 // Sums up the score for all cards in the hand
