@@ -19,12 +19,18 @@ var VALUE = 1
 var WIDTH = 2
 var HEIGHT = 3
 
+const LOSE = 0
+const WON = 1
+const TIE = 2
+const RESET = 3
+
 
 const CLOVER = 0
 const DIAMONDS = 1
 const HEARTS = 2
 const SPADES = 3
 
+// Resets after game-state has ended (next-hand/turn)
 function reset(){
     playerHand = []
     dealerHand = []
@@ -39,12 +45,14 @@ function reset(){
 	}
 }
 
+// initialize
 function init(){
     reset()
     cardDeck = shuffle(cardDeck)
     message(RESET)
 }
 
+// Starting the game function, tied to start-button
 function start(){
     init()
     drawFromDeck(playerHand)
@@ -59,10 +67,8 @@ function start(){
     display()
 }
 
-const LOSE = 0
-const WON = 1
-const TIE = 2
-const RESET = 3
+
+// Functions at end-state of hand/game (usually after pressing stand)
 function lose(){
 	turns++
     switchButtons(false)
@@ -80,7 +86,7 @@ function won(){
     message(WON)
 }
 
-
+// Hit-function tied to hit-button
 function hit(){
     drawFromDeck(playerHand);
     playerSum = sumUpScore(playerHand)
@@ -98,6 +104,7 @@ function hit(){
     }
 }
 
+// Checks if player won or not.
 function winCheck (){
     if(dealerSum > 21){
         won()
@@ -111,6 +118,9 @@ function winCheck (){
         won()
     }
 }
+
+
+// Stand function tied to stand-button
 function stand(){
     revealDealer = true
     playerSum = sumUpScore(playerHand)
